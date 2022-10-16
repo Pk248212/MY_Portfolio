@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+#include<string>
+#define ll long long
+#define repi(i,a,b) for(ll i=a;i<=b;i++)
+#define repd(i,a,b) for(ll i=a;i>=b;i--)
+#define FASTIO(); ios::sync_with_stdio(0); cin.tie(0);
+#define cy cout<<"YES\n"
+#define cn cout<<"NO\n"
+#define MOD 1000000001
+#define vi vector<int>
+#define vl vector<ll>
+#define pb push_back
+#define pf push_front
+#define popb pop_back
+#define popf pop_front
+#define ff first
+#define ss second
+#define nl cout<<"\n"
+#define cm cout<<"-1\n"
+
+using namespace std;
+
+int main(){
+    ll t=1;
+    cin>>t;
+    while(t--){
+      ll a,b,n;
+      cin>>a>>b>>n;
+      ll ans=max(a,b);
+      ll ct=0;
+      ll x=min(a,b);
+      ll y=a+b-x;
+      while(ans<=n){
+          x+=y;
+          ct++;
+          if(x>n)break;
+          y+=x;
+          ans=y;
+        //  cout<<ans; nl;
+          ct++;
+      }
+      //ll z=min(x,y);
+     // cout<<x; nl;
+      //if(ans-z>n)ct--;
+      cout<<ct; nl;
+    }
+    return 0;
+}
